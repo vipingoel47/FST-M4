@@ -1,7 +1,0 @@
-CREATE TABLE episodeIV (name STRING, line STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' TBLPROPERTIES ("skip.header.line.count"="2");
-
-LOAD DATA LOCAL INPATH '/episodeIV_dialouges.txt' INTO TABLE episodeIV;
-
-INSERT OVERWRITE DIRECTORY '/user/root/hive_activity2' ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' SELECT COUNT(*) as LUKE_count FROM episodeIV where INSTR(line,'Luke') > 0;
-
-INSERT OVERWRITE LOCAL DIRECTORY '/hive_activity2' ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' SELECT COUNT(*) as LUKE_count FROM episodeIV where INSTR(line,'Luke') > 0;
