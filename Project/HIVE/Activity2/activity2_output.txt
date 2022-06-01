@@ -1,0 +1,3 @@
+hive> dfs -cat /user/root/hive_activity2/000000_0;
+56
+hive>
